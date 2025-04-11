@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:watch_mode_flutter/presentation/search_movie_page.dart';
 import 'package:watch_mode_flutter/presentation/splash_page.dart';
+import 'package:watch_mode_flutter/service_locator.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  setupServiceLocator();
   runApp(const MyApp());
 }
 
@@ -15,10 +18,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-  
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const SplashPage(),
+      home: const SearchMoviePage(),
     );
   }
 }
